@@ -451,6 +451,16 @@
     '*queues':       'int' } }
 
 ##
+# @NetdevVmnetOptions:
+#
+# vmnet network backend
+#
+# Since: 5.3
+##
+{ 'struct': 'NetdevVmnetOptions',
+  'data': {} }
+
+##
 # @NetClientDriver:
 #
 # Available netdev drivers.
@@ -461,7 +471,8 @@
 ##
 { 'enum': 'NetClientDriver',
   'data': [ 'none', 'nic', 'user', 'tap', 'l2tpv3', 'socket', 'vde',
-            'bridge', 'hubport', 'netmap', 'vhost-user', 'vhost-vdpa' ] }
+            'bridge', 'hubport', 'netmap', 'vhost-user', 'vhost-vdpa',
+            'vmnet' ] }
 
 ##
 # @Netdev:
@@ -490,7 +501,8 @@
     'hubport':  'NetdevHubPortOptions',
     'netmap':   'NetdevNetmapOptions',
     'vhost-user': 'NetdevVhostUserOptions',
-    'vhost-vdpa': 'NetdevVhostVDPAOptions' } }
+    'vhost-vdpa': 'NetdevVhostVDPAOptions',
+    'vmnet': 'NetdevVmnetOptions' } }
 
 ##
 # @RxState:
